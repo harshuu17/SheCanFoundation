@@ -13,6 +13,9 @@ const donationRoutes = require('./routes/donations');
 
 const app = express();
 
+// Trust proxy for rate limiting on Vercel
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(morgan('combined'));
