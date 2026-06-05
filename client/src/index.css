@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-gray-800 bg-slate-50;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+  .bg-mesh {
+    background-image: radial-gradient(at 40% 20%, hsla(280,80%,74%,0.15) 0px, transparent 50%),
+                      radial-gradient(at 80% 0%, hsla(250,80%,60%,0.1) 0px, transparent 50%),
+                      radial-gradient(at 0% 50%, hsla(290,70%,75%,0.1) 0px, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-gray-100; }
+::-webkit-scrollbar-thumb { @apply bg-primary-400 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-primary-600; }
